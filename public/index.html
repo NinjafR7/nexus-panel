@@ -1,5 +1,90 @@
-<h1>Nexus Admin Panel</h1>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nexus Control Panel</title>
 
-<button onclick="fetch('/api/lockdown')">
-Lockdown Server
-</button>
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0f172a;
+    color:white;
+}
+
+.sidebar{
+    width:220px;
+    height:100vh;
+    background:#020617;
+    position:fixed;
+    padding:20px;
+}
+
+.sidebar h2{
+    color:#38bdf8;
+}
+
+.sidebar button{
+    width:100%;
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    background:#1e293b;
+    color:white;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+.main{
+    margin-left:240px;
+    padding:40px;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.action-btn{
+    padding:12px 20px;
+    border:none;
+    background:#ef4444;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h2>Nexus Panel</h2>
+    <button>Dashboard</button>
+    <button>Moderation</button>
+    <button>Tickets</button>
+    <button>Logs</button>
+</div>
+
+<div class="main">
+
+    <div class="card">
+        <h1>Server Control</h1>
+        <p>Emergency tools for server protection.</p>
+        <button class="action-btn" onclick="fetch('/api/lockdown')">
+            Activate Lockdown
+        </button>
+    </div>
+
+    <div class="card">
+        <h2>Statistics</h2>
+        <p>Users online: 0</p>
+        <p>Warnings today: 0</p>
+    </div>
+
+</div>
+
+</body>
+</html>
