@@ -35,3 +35,9 @@ app.get("/api/unlock", async (req,res)=>{
 });
 
 app.listen(3000, ()=>console.log("Panel running"));
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Panel running on ${PORT}`);
+});
+
